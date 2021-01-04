@@ -38,7 +38,7 @@ int main(int argc, char** argv) {
 	/////////////////////////////////////////////////////////////////////////////////////////
 	//define
 	//T_elemType l_inMat[k_fftKernelSize][k_fftKernelSize];
-	cmpxDataIn l_inMat[k_fftKernelSize][k_fftKernelSize];
+	static cmpxDataIn l_inMat[k_fftKernelSize][k_fftKernelSize];
         //std::complex<float>  multi_inMat1[k_fftKernelSize][k_fftKernelSize];
     	static cmpxDataIn xinmat[k_fftKernelSize*k_fftKernelSize];
     	static cmpxDataOut xoutmat[k_fftKernelSize*k_fftKernelSize];
@@ -72,7 +72,8 @@ int main(int argc, char** argv) {
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//fft_2d
 	//fft_2d(0,xinmat,xoutmat);
-	fft_2d(0,xinmat);
+	//fft_2d(0,xinmat);
+	mfft_2d(0,l_inMat);
 
 	FILE *outfile =fopen("./fft2d_out.txt","w");
 
@@ -80,7 +81,8 @@ for (int idx1=0;idx1<k_fftKernelSize;++idx1)
 {
 	for (int idx2=0;idx2<k_fftKernelSize;++idx2)
 	{
-       		fprintf(outfile,"%f +j*%f  ",xinmat[idx1*FFT_LENGTH+idx2].real(),xinmat[idx1*FFT_LENGTH+idx2].imag());										
+       		//fprintf(outfile,"%f +j*%f  ",xinmat[idx1*FFT_LENGTH+idx2].real(),xinmat[idx1*FFT_LENGTH+idx2].imag());										
+       		fprintf(outfile,"%f +j*%f  ",l_inMat[idx1][idx2].real(),l_inMat[idx1][idx2].imag());										
 	}
        		fprintf(outfile," \n");										
 }

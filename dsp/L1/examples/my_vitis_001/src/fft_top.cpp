@@ -262,4 +262,75 @@ void fft_2d(
 
 
 
+void mfft_2d(
+		bool direction,
+		complex<data_in_t> in[FFT_LENGTH][FFT_LENGTH])
+{
+#pragma HLS INTERFACE ap_memory storage_type=ram_2p port=in
+	#pragma HLS interface ap_hs port=direction
+	#pragma HLS dataflow
+    	const int SAMPLES = (1 << FFT_NFFT_MAX);    	
+
+	static cmpxDataIn   fft_input[SAMPLES];
+	static cmpxDataOut  fft_output[SAMPLES];
+	cmpxDataOut  fft_ioutput[SAMPLES];
+
+	static  int d =0;
+	static  int r =0;
+	static  int c =0;
+	static  int t =0;
+	static  int k =0;
+	static  int s =0;
+
+	config_t fft_config;
+	status_t fft_status;
+
+	bool fvflo;
+
+	for (d = 0; d < 2; ++d) {
+		for (r = 0; r < FFT_LENGTH; ++r) {
+			//fft
+			for (c = 0; c < FFT_LENGTH; ++c ){
+				if (d==0) {
+					fft_input[c]=cmpxDataIn(in[c][r].real(),in[c][r].imag());	
+				}
+				else {
+					fft_input[c]=cmpxDataIn(in[r][c].real(),in[r][c].imag());	
+				}
+		 	//	std::cout <<"num "<<c<< "  fft_input.real: "<<fft_input[c].real()<<" fft_input.imag: "<<fft_input[c].imag()<< std::endl;
+       				//fprintf(outfile,"%f %f \n",fft_input[c].real(),fft_input[c].imag());
+			}
+			//fclose(outfile);
+
+			fft_top(0, fft_input,fft_output, &fvflo);
+			//hls::fft<config1>(fft_input, fft_output, &fft_status, &fft_config);
+
+			//std::cout << " ///////////////////////////////////////////  fft_end  "<<r<< std::endl;										
+			//addr inverse 
+			//for (t = 0; t < FFT_LENGTH; ++t ){
+			//	unsigned addr_reverse = 0;
+			//	for (k = 0; k < FFT_NFFT_MAX; ++k)
+			//	{
+			//	  addr_reverse <<= 1;
+			//	  addr_reverse |= (t >> k) & 0x1;
+			//	}
+			//	fft_ioutput[addr_reverse] =  cmpxDataOut(fft_output[t].real(),fft_output[t].imag());
+		 	//	std::cout <<"num "<<t << " fft_output.real: "<<fft_output[t].real()<<" fft_output.imag: "<<fft_output[t].imag()<< std::endl;
+       			//	//fprintf(outfile,"%f %f \n",fft_output[t].real(),fft_output[t].imag());								
+			//}
+			//write back 
+			for ( s = 0; s < FFT_LENGTH; ++s ){
+				if (d==0) {
+					in[s][r]=cmpxDataIn(fft_output[s].real(),fft_output[s].imag());	
+				}
+				else {
+					in[r][s]=cmpxDataIn(fft_output[s].real(),fft_output[s].imag());	
+				}
+			}
+		}
+	}
+
+}
+
+
 

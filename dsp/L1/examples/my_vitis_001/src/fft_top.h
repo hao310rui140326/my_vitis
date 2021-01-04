@@ -154,7 +154,13 @@ void proc_2d_fe(
 
 void fft_2d(
     bool direction,		
-    cmpxDataIn in[FFT_LENGTH]);//,
+    cmpxDataIn in[FFT_LENGTH*FFT_LENGTH]);//,
+    //cmpxDataOut out[FFT_LENGTH]);
+
+
+void mfft_2d(
+    bool direction,		
+    cmpxDataIn in[FFT_LENGTH][FFT_LENGTH]);//,
     //cmpxDataOut out[FFT_LENGTH]);
 
 

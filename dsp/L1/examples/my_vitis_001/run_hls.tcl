@@ -31,7 +31,7 @@ add_files "src/fft_top.cpp"
 ##//add_files "src/fft_2d.cpp"
 
 add_files -tb "src/main_2d_fft_test.cpp src/top_2d_fft_test.cpp" -cflags "-I${XF_PROJ_ROOT}/L1/include/hw/vitis_2dfft/float/"
-set_top fft_2d
+set_top mfft_2d
 
 open_solution -reset $SOLN
 
