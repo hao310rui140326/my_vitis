@@ -1,0 +1,1680 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vitis_HLS/2020.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'hao' on host 'hao-Lenovo-Rescuer-15ISK' (Linux_x86_64 version 5.4.0-58-generic) on Tue Jan 05 17:14:19 CST 2021
+INFO: [HLS 200-10] On os Ubuntu 20.04.1 LTS
+INFO: [HLS 200-10] In directory '/home/hao/wrk/my_vitis/my_insar/prj02'
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset prj_insar.prj 
+INFO: [HLS 200-10] Opening and resetting project '/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj'.
+WARNING: [HLS 200-40] No /home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/solution1.aps file found.
+INFO: [HLS 200-1510] Running: add_files src/fft_top.cpp 
+INFO: [HLS 200-10] Adding design file 'src/fft_top.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb src/main_2d_fft_test.cpp  
+INFO: [HLS 200-10] Adding test bench file 'src/main_2d_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top mdsp 
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 
+INFO: [HLS 200-10] Creating and opening solution '/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+WARNING: [HLS 200-40] No /home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/solution1.aps file found.
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xcu200-fsgd2104-2-e 
+INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
+INFO: [HLS 200-1510] Running: create_clock -period 3.33 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
+INFO: [HLS 200-1510] Running: config_dataflow -default_channel fifo -fifo_depth 1 
+INFO: [XFORM 203-701] Set default FIFO size in dataflow to 1.
+INFO: [XFORM 203-701] Set the default channel type in dataflow to FIFO.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../src/main_2d_fft_test.cpp in debug mode
+   Compiling ../../../../src/fft_top.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../src/main_2d_fft_test.cpp:29:0:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_linear_algebra.h:46:2: 警告： #warning HLS Linear Algebra Library is deprecated in Vitis HLS, and will be removed in Release 2021.1. For matrix decomposition please consider the Vitis Solver Library (https: [-Wcpp]
+ #warning HLS Linear Algebra Library is deprecated in Vitis HLS, and will be removed in Release 2021.1. For matrix decomposition please consider the Vitis Solver Library (https://github.com/Xilinx/Vitis_Libraries).
+  ^~~~~~~
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/utils/x_hls_traits.h:40:0,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/utils/std_complex_utils.h:39,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/hls/linear_algebra/utils/x_hls_matrix_utils.h:37,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/hls/linear_algebra/hls_matrix_multiply.h:69,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_linear_algebra.h:50,
+                 from ../../../../src/main_2d_fft_test.cpp:29:
+/tools/Xilinx/Vitis_HLS/2020.2/include/utils/x_hls_utils.h:243:40: 警告： ‘hls_preserve’属性指定被忽略 [-Wattributes]
+ __attribute__((hls_preserve)) T reg(T d)
+                                        ^
+In file included from ../../../../src/fft_top.cpp:95:0:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_linear_algebra.h:46:2: 警告： #warning HLS Linear Algebra Library is deprecated in Vitis HLS, and will be removed in Release 2021.1. For matrix decomposition please consider the Vitis Solver Library (https: [-Wcpp]
+ #warning HLS Linear Algebra Library is deprecated in Vitis HLS, and will be removed in Release 2021.1. For matrix decomposition please consider the Vitis Solver Library (https://github.com/Xilinx/Vitis_Libraries).
+  ^~~~~~~
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/utils/x_hls_traits.h:40:0,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/utils/std_complex_utils.h:39,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/hls/linear_algebra/utils/x_hls_matrix_utils.h:37,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/hls/linear_algebra/hls_matrix_multiply.h:69,
+                 from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_linear_algebra.h:50,
+                 from ../../../../src/fft_top.cpp:95:
+/tools/Xilinx/Vitis_HLS/2020.2/include/utils/x_hls_utils.h:243:40: 警告： ‘hls_preserve’属性指定被忽略 [-Wattributes]
+ __attribute__((hls_preserve)) T reg(T d)
+                                        ^
+/tools/Xilinx/Vivado/2020.2/tps/lnx64/binutils-2.26/bin/ld: warning: libgmp.so.11, needed by /tools/Xilinx/Vitis_HLS/2020.2/lnx64/tools/fft_v9_1/libIp_xfft_v9_1_bitacc_cmodel.so, may conflict with libgmp.so.7
+---------------------FFT 2D start 
+======OUTPUT : row is  -7 col is 7
+================================================================
+---------------------Impulse test Passed Successfully.
+================================================================
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 13.07 seconds. CPU system time: 0.78 seconds. Elapsed time: 13.13 seconds; current allocated memory: 190.014 MB.
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 190.214 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/fft_top.cpp' ... 
+WARNING: [HLS 207-943] HLS Linear Algebra Library is deprecated in Vitis HLS, and will be removed in Release 2021.1. For matrix decomposition please consider the Vitis Solver Library (https://github.com/Xilinx/Vitis_Libraries).: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/39/hls_linear_algebra.h:46:2
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:173:20
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:174:21
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:182:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:183:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:184:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:185:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:186:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:187:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: src/fft_top.cpp:197:2
+Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-114.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:271:20
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:272:21
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:275:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:276:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:277:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:278:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:279:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:280:13
+Resolution: For help on HLS 214-111 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-111.html
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: src/fft_top.cpp:287:2
+Resolution: For help on HLS 214-114 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-114.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:862:20
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:868:5
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-113.html
+WARNING: [HLS 214-113] Either use an argument of the function or declare the variable inside the dataflow loop body: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:868:15
+Resolution: For help on HLS 214-113 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=214-113.html
+WARNING: [HLS 200-471] Dataflow form checks found 21 issue(s) in file src/fft_top.cpp
+Resolution: For help on HLS 200-471 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-471.html
+WARNING: [HLS 207-5301] unused parameter 'data_type': /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft.h:146:77
+WARNING: [HLS 207-5301] unused parameter 'has_nfft': /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft.h:171:65
+WARNING: [HLS 207-5301] unused parameter 'cp_len_enable': /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft.h:184:66
+WARNING: [HLS 207-5301] unused parameter 'scaling_opt': /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft.h:197:68
+WARNING: [HLS 207-5301] unused parameter 'scaling_opt': /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft.h:361:71
+WARNING: [HLS 207-5301] unused parameter 'has_ovflo': /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft.h:374:66
+WARNING: [HLS 207-5498] the 'complete/partial/region' option to 'Unroll' pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft.h:498:28
+WARNING: [HLS 207-5498] the 'complete/partial/region' option to 'Unroll' pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:143:28
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:566:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:568:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:569:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:715:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:722:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:723:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:719:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:720:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:718:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:717:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:787:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:885:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:892:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:893:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:889:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:890:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:888:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:887:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:920:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:927:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:928:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:924:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:925:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:923:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:922:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:958:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:964:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:965:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:966:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:962:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:963:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:961:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:960:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:117:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:118:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:119:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:120:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:121:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:151:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:152:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:153:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:154:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:155:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:156:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:157:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:158:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:159:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:160:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:210:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:211:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:212:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:239:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:240:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:241:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:242:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:243:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:244:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:280:9
+WARNING: [HLS 207-5510] 'Resource pragma' is deprecated, and it will be removed in future release. It is suggested to replace it with 'bind_op/bind_storage pragma'.: /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_hotbm_apfixed.h:281:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: src/fft_top.cpp:137:9
+WARNING: [HLS 207-5496] the pragma is not supported and will be ignored: src/fft_top.cpp:138:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:134:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:136:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:136:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:136:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:136:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:135:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:135:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:163:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:162:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:267:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:266:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:328:9
+WARNING: [HLS 207-5524] Ignore interface attribute or pragma which is not used in top function: src/fft_top.cpp:329:9
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 27.74 seconds. CPU system time: 0.96 seconds. Elapsed time: 28.75 seconds; current allocated memory: 194.263 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'hls::ip_fft::config_t<config1>::setDir(bool, unsigned int)' into 'dummy_proc_fe(bool, hls::ip_fft::config_t<config1>*, std::complex<float>*, std::complex<float>*)' (src/fft_top.cpp:106:13)
+INFO: [HLS 214-131] Inlining function 'hls::ip_fft::config_t<config1>::setSch(unsigned int, unsigned int)' into 'dummy_proc_fe(bool, hls::ip_fft::config_t<config1>*, std::complex<float>*, std::complex<float>*)' (src/fft_top.cpp:107:13)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::config_t<config1>, 0>::read(hls::ip_fft::config_t<config1>&)' into 'hls::stream<hls::ip_fft::config_t<config1>, 0>::read()' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::config_t<config1>, 0>::read()' into 'void hls::fft_syn<config1, (char)32, (char)32, 16, (char)1, (hls::ip_fft::type)1>(unsigned long*, unsigned long*, hls::stream<hls::ip_fft::status_t<config1>, 0>&, hls::stream<hls::ip_fft::config_t<config1>, 0>&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:817:62)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::status_t<config1>, 0>::write(hls::ip_fft::status_t<config1> const&)' into 'void hls::fft_syn<config1, (char)32, (char)32, 16, (char)1, (hls::ip_fft::type)1>(unsigned long*, unsigned long*, hls::stream<hls::ip_fft::status_t<config1>, 0>&, hls::stream<hls::ip_fft::config_t<config1>, 0>&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:828:19)
+INFO: [HLS 214-131] Inlining function 'hls::ip_fft::config_t<config1>::getDir(unsigned int)' into 'void hls::fft_syn<config1, (char)32, (char)32, 16, (char)1, (hls::ip_fft::type)1>(unsigned long*, unsigned long*, hls::stream<hls::ip_fft::status_t<config1>, 0>&, hls::stream<hls::ip_fft::config_t<config1>, 0>&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:827:34)
+INFO: [HLS 214-131] Inlining function 'hls::ip_fft::config_t<config1>::getDir(unsigned int)' into 'void hls::fft_syn<config1, (char)32, (char)32, 16, (char)1, (hls::ip_fft::type)1>(unsigned long*, unsigned long*, hls::stream<hls::ip_fft::status_t<config1>, 0>&, hls::stream<hls::ip_fft::config_t<config1>, 0>&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:819:37)
+INFO: [HLS 214-131] Inlining function 'hls::ip_fft::config_t<config1>::getSch(unsigned int)' into 'void hls::fft_syn<config1, (char)32, (char)32, 16, (char)1, (hls::ip_fft::type)1>(unsigned long*, unsigned long*, hls::stream<hls::ip_fft::status_t<config1>, 0>&, hls::stream<hls::ip_fft::config_t<config1>, 0>&)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:818:39)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::status_t<config1>, 0>::read(hls::ip_fft::status_t<config1>&)' into 'hls::stream<hls::ip_fft::status_t<config1>, 0>::read()' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:156:9)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::status_t<config1>, 0>::stream()' into 'void hls::fft<config1>(std::complex<float>*, std::complex<float>*, hls::ip_fft::status_t<config1>*, hls::ip_fft::config_t<config1>*)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:860:45)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::status_t<config1>, 0>::read()' into 'void hls::fft<config1>(std::complex<float>*, std::complex<float>*, hls::ip_fft::status_t<config1>*, hls::ip_fft::config_t<config1>*)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:868:24)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::config_t<config1>, 0>::stream()' into 'void hls::fft<config1>(std::complex<float>*, std::complex<float>*, hls::ip_fft::status_t<config1>*, hls::ip_fft::config_t<config1>*)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:861:45)
+INFO: [HLS 214-131] Inlining function 'hls::stream<hls::ip_fft::config_t<config1>, 0>::write(hls::ip_fft::config_t<config1> const&)' into 'void hls::fft<config1>(std::complex<float>*, std::complex<float>*, hls::ip_fft::status_t<config1>*, hls::ip_fft::config_t<config1>*)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:862:14)
+INFO: [HLS 214-178] Inlining function 'dummy_proc_fe(bool, hls::ip_fft::config_t<config1>*, std::complex<float>*, std::complex<float>*)' into 'fft_top(bool, std::complex<float>*, std::complex<float>*, bool*)' (src/fft_top.cpp:133:0)
+INFO: [HLS 214-178] Inlining function 'fft_top(bool, std::complex<float>*, std::complex<float>*, bool*)' into 'mfft_2d(bool, bool, std::complex<float> (*) [16])' (src/fft_top.cpp:265:0)
+INFO: [HLS 214-178] Inlining function 'std::complex<float> hls::NoTranspose::GetElement<16, 16, std::complex<float> >(std::complex<float> const (*) [16], unsigned int, unsigned int) (.68.74)' into 'std::complex<float> hls::GetMatrixElement<hls::NoTranspose, 16, 16, std::complex<float> >(std::complex<float> const (*) [16], unsigned int, unsigned int)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/utils/x_hls_matrix_utils.h:98:0)
+INFO: [HLS 214-178] Inlining function 'std::complex<float> hls::GetMatrixElement<hls::NoTranspose, 16, 16, std::complex<float> >(std::complex<float> const (*) [16], unsigned int, unsigned int)' into 'void hls::matrix_multiply_alt2<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, hls::matrix_multiply_traits<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, std::complex<float>, std::complex<float> >, std::complex<float>, std::complex<float> >(std::complex<float> const (*) [16], std::complex<float> const (*) [16], std::complex<float> (*) [16])' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:305:0)
+INFO: [HLS 214-178] Inlining function 'void hls::matrix_multiply_top<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, hls::matrix_multiply_traits<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, std::complex<float>, std::complex<float> >, std::complex<float>, std::complex<float> >(std::complex<float> const (*) [16], std::complex<float> const (*) [16], std::complex<float> (*) [16])' into 'void hls::matrix_multiply<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, std::complex<float>, std::complex<float> >(std::complex<float> const (*) [16], std::complex<float> const (*) [16], std::complex<float> (*) [16])' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:562:0)
+INFO: [HLS 214-178] Inlining function 'fft_top(bool, std::complex<float>*, std::complex<float>*, bool*)' into 'mfft_2d(bool, bool, std::complex<float> (*) [16]) (.116)' (src/fft_top.cpp:265:0)
+INFO: [HLS 214-178] Inlining function 'void hls::matrix_multiply<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, std::complex<float>, std::complex<float> >(std::complex<float> const (*) [16], std::complex<float> const (*) [16], std::complex<float> (*) [16])' into 'mdsp(std::complex<float> (*) [16], std::complex<float> (*) [16], int*, int*)' (src/fft_top.cpp:373:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/complex:1076:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/complex:1080:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/complex:1076:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/../../../../include/c++/6.2.0/complex:1080:29)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.hls::ip_fft::config_ts' into 'void hls::fft_syn<config1, (char)32, (char)32, 16, (char)1, (hls::ip_fft::type)1>(unsigned long*, unsigned long*, hls::stream<hls::ip_fft::status_t<config1>, 0>&, hls::stream<hls::ip_fft::config_t<config1>, 0>&) (.1)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i8.s_struct.hls::ip_fft::config_ts' into 'void hls::fft<config1>(std::complex<float>*, std::complex<float>*, hls::ip_fft::status_t<config1>*, hls::ip_fft::config_t<config1>*)' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_stream_39.h:174:9)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i64.s_struct.std::complexs' into 'mfft_2d(bool, bool, std::complex<float> (*) [16]) (.1)' (src/fft_top.cpp:303:14)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i64.s_struct.std::complexs' into 'mfft_2d(bool, bool, std::complex<float> (*) [16]) (.1)' (src/fft_top.cpp:310:15)
+INFO: [HLS 214-131] Inlining function '_llvm.fpga.pack.none.i64.s_struct.std::complexs' into 'mfft_2d(bool, bool, std::complex<float> (*) [16]) (.1)' (src/fft_top.cpp:307:15)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.82 seconds. CPU system time: 0.28 seconds. Elapsed time: 5.12 seconds; current allocated memory: 196.134 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 196.138 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 207.125 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.28 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.29 seconds; current allocated memory: 224.508 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_288_2' in function 'mfft_2d' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_288_2' in function 'mfft_2d.1' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'Loop-2' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:318) in function 'hls::matrix_multiply_alt2<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, hls::matrix_multiply_traits<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, std::complex<float>, std::complex<float> >, std::complex<float>, std::complex<float> >' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_398_2' (src/fft_top.cpp:381) in function 'mdsp' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_288_2' in function 'mfft_2d.1' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_288_2' in function 'mfft_2d' for pipelining.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-1' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:318) in function 'hls::matrix_multiply_alt2<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, hls::matrix_multiply_traits<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, std::complex<float>, std::complex<float> >, std::complex<float>, std::complex<float> >' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'hls::data_copy_from_int64_to_float<config1>' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:766:76).
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'hls::data_copy_from_float_to_int64<config1>' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:751:76).
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_291_3' (src/fft_top.cpp:296) in function 'mfft_2d.1' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_301_4' in function 'mfft_2d.1' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_291_3' (src/fft_top.cpp:296) in function 'mfft_2d' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_301_4' in function 'mfft_2d' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:318) in function 'hls::matrix_multiply_alt2<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, hls::matrix_multiply_traits<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, std::complex<float>, std::complex<float> >, std::complex<float>, std::complex<float> >' completely with a factor of 15.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_766_1' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:766) in function 'hls::data_copy_from_int64_to_float<config1>' completely with a factor of 16.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_751_1' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:751) in function 'hls::data_copy_from_float_to_int64<config1>' completely with a factor of 16.
+INFO: [XFORM 203-102] Partitioning array 'fft_input._M_value.1' automatically.
+INFO: [XFORM 203-102] Partitioning array 'fft_input._M_value' automatically.
+WARNING: [HLS 200-908] Cannot partition array 'matrix_mult._M_value.1' : incorrect partition factor 1.
+WARNING: [HLS 200-908] Cannot partition array 'matrix_mult._M_value' : incorrect partition factor 1.
+WARNING: [HLS 200-908] Cannot partition array 'sum_mult._M_value' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:318): incorrect partition factor 1.
+WARNING: [HLS 200-908] Cannot partition array 'sum_mult._M_value.1' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:318): incorrect partition factor 1.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_287_1_proc' (src/fft_top.cpp:288) to a process function for dataflow in function 'mfft_2d.1'.
+INFO: [XFORM 203-721] Changing loop 'Loop_VITIS_LOOP_287_1_proc' (src/fft_top.cpp:288) to a process function for dataflow in function 'mfft_2d'.
+WARNING: [HLS 200-805] An internal stream 'status_s' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:860) with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+WARNING: [HLS 200-805] An internal stream 'config_s' with default size can result in deadlock. Please consider resizing the stream using the directive 'set_directive_stream' or the 'HLS stream' pragma.
+INFO: [XFORM 203-712] Applying dataflow to function 'hls::fft<config1>' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:851:5), detected/extracted 6 process function(s): 
+	 'hls::fft<config1>.entry24'
+	 'hls::fft<config1>_Block_.split1_proc18'
+	 'hls::data_copy_from_float_to_int64<config1>'
+	 'hls::fft_syn<config1, (char)32, (char)32, 16, (char)1, (hls::ip_fft::type)1>'
+	 'hls::data_copy_from_int64_to_float<config1>'
+	 'hls::fft<config1>_Block_.split15_proc19'.
+INFO: [XFORM 203-712] Applying dataflow to function 'mfft_2d.1' (src/fft_top.cpp:319:1), detected/extracted 1 process function(s): 
+	 'mfft_2d.1_Loop_VITIS_LOOP_287_1_proc20'.
+INFO: [XFORM 203-712] Applying dataflow to function 'mfft_2d' (src/fft_top.cpp:319:1), detected/extracted 1 process function(s): 
+	 'mfft_2d_Loop_VITIS_LOOP_287_1_proc21'.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (src/fft_top.cpp:302:9) in function 'mfft_2d_Loop_VITIS_LOOP_287_1_proc21'... converting 49 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (src/fft_top.cpp:302:9) in function 'mfft_2d.1_Loop_VITIS_LOOP_287_1_proc20'... converting 49 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 2.27 seconds. CPU system time: 0.03 seconds. Elapsed time: 2.3 seconds; current allocated memory: 264.062 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_287_1' (src/fft_top.cpp:288:28) in function 'mfft_2d_Loop_VITIS_LOOP_287_1_proc21' the outer loop is not a perfect loop because there is nontrivial logic in the loop header.
+Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-960.html
+WARNING: [HLS 200-960] Cannot flatten loop 'VITIS_LOOP_287_1' (src/fft_top.cpp:288:28) in function 'mfft_2d.1_Loop_VITIS_LOOP_287_1_proc20' the outer loop is not a perfect loop because there is nontrivial logic in the loop header.
+Resolution: For help on HLS 200-960 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-960.html
+INFO: [XFORM 203-541] Flattening a loop nest 'VITIS_LOOP_396_1' (src/fft_top.cpp:381:8) in function 'mdsp'.
+INFO: [XFORM 203-541] Flattening a loop nest 'a_row_loop' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:325:28) in function 'hls::matrix_multiply_alt2<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, hls::matrix_multiply_traits<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, std::complex<float>, std::complex<float> >, std::complex<float>, std::complex<float> >'.
+INFO: [XFORM 203-541] Flattening a loop nest 'a_col_loop' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:324:23) in function 'hls::matrix_multiply_alt2<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, 16, 16, hls::matrix_multiply_traits<hls::NoTranspose, hls::NoTranspose, 16, 16, 16, 16, std::complex<float>, std::complex<float> >, std::complex<float>, std::complex<float> >'.
+INFO: [HLS 200-472] Inferring partial write operation for 'matrix_mult._M_value.1' (src/fft_top.cpp:303:14)
+INFO: [HLS 200-472] Inferring partial write operation for 'matrix_mult._M_value.1' (src/fft_top.cpp:310:15)
+INFO: [HLS 200-472] Inferring partial write operation for 'matrix_mult._M_value' (src/fft_top.cpp:307:15)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum_mult._M_value' 
+INFO: [HLS 200-472] Inferring partial write operation for 'sum_mult._M_value' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:338:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'matrix_mult._M_value.1' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:341:21)
+INFO: [HLS 200-472] Inferring partial write operation for 'sum_mult._M_value' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:344:28)
+INFO: [HLS 200-472] Inferring partial write operation for 'fft_output._M_value.1' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:774:13)
+WARNING: [HLS 200-993] Function 'fft<config1>' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:858:5) failed dataflow checking:  A dataflow region cannot be instantiated from within a pipelined loop . Ignoring pipeline directive to allow the dataflow directive to take precedence. 
+Resolution: For help on HLS 200-993 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-993.html
+WARNING: [HLS 200-993] Function 'fft<config1>' (/tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls_fft_x_complex.h:858:5) failed dataflow checking:  A dataflow region cannot be instantiated from within a pipelined loop . Ignoring pipeline directive to allow the dataflow directive to take precedence. 
+Resolution: For help on HLS 200-993 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-993.html
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 2.87 seconds. CPU system time: 0.05 seconds. Elapsed time: 2.95 seconds; current allocated memory: 393.109 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mdsp' ...
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>.entry24' to 'fft_config1_entry24'.
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>_Block_.split1_proc18' to 'fft_config1_Block_split1_proc18'.
+WARNING: [SYN 201-103] Legalizing function name 'data_copy_from_float_to_int64<config1>' to 'data_copy_from_float_to_int64_config1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'fft_syn<config1, 32, 32, 16, 1, 1>' to 'fft_syn_config1_32_32_16_1_1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'data_copy_from_int64_to_float<config1>' to 'data_copy_from_int64_to_float_config1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>_Block_.split15_proc19' to 'fft_config1_Block_split15_proc19'.
+WARNING: [SYN 201-103] Legalizing function name 'fft<config1>' to 'fft_config1_s'.
+WARNING: [SYN 201-103] Legalizing function name 'mfft_2d.1_Loop_VITIS_LOOP_287_1_proc20' to 'mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20'.
+WARNING: [SYN 201-103] Legalizing function name 'mfft_2d.1' to 'mfft_2d_1'.
+WARNING: [SYN 201-103] Legalizing function name 'matrix_multiply_alt2<NoTranspose, NoTranspose, 16, 16, 16, 16, 16, 16, matrix_multiply_traits<NoTranspose, NoTranspose, 16, 16, 16, 16, complex<float>, complex<float> >, complex<float>, complex<float> >' to 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_entry24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 395.685 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 396.332 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_Block_split1_proc18' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 396.370 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 396.469 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'data_copy_from_float_to_int64_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 396.853 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 397.572 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_syn_config1_32_32_16_1_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Skip scheduling the IP block.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 397.594 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 397.633 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'data_copy_from_int64_to_float_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 398.055 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 398.463 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_Block_split15_proc19' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 398.496 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 398.544 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO config_s_i (from fft_config1_Block_split1_proc18_U0 to fft_syn_config1_32_32_16_1_1_U0) to 2 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO xn_cp (from data_copy_from_float_to_int64_config1_U0 to fft_syn_config1_32_32_16_1_1_U0) to 2 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO xk_cp (from fft_syn_config1_32_32_16_1_1_U0 to data_copy_from_int64_to_float_config1_U0) to 2 to improve performance and/or avoid deadlocks.
+WARNING: [HLS 200-1018] Consider increasing the depth of FIFO status_s (from fft_syn_config1_32_32_16_1_1_U0 to fft_config1_Block_split15_proc19_U0) to 2 to improve performance and/or avoid deadlocks.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 398.833 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 400.007 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.91 seconds. CPU system time: 0 seconds. Elapsed time: 0.92 seconds; current allocated memory: 401.963 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.82 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.83 seconds; current allocated memory: 404.205 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mfft_2d_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.91 seconds. CPU system time: 0 seconds. Elapsed time: 0.92 seconds; current allocated memory: 404.286 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 404.438 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('sum_mult_M_value_addr_2_write_ln1060') of constant 0 on array 'sum_mult._M_value', /tools/Xilinx/Vitis_HLS/2020.2/common/technology/autopilot/hls/linear_algebra/hls_matrix_multiply.h:318 due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'sum_mult_M_value'.
+Resolution: For help on HLS 200-885 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 8, Depth = 8, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining loop 'a_col_loop_a_row_loop_b_col_loop'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 24, loop 'a_col_loop_a_row_loop_b_col_loop'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.93 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.94 seconds; current allocated memory: 405.268 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.45 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.45 seconds; current allocated memory: 406.262 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mfft_2d_Loop_VITIS_LOOP_287_1_proc21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1 seconds; current allocated memory: 407.696 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.85 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.86 seconds; current allocated memory: 409.407 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mfft_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.95 seconds. CPU system time: 0 seconds. Elapsed time: 0.94 seconds; current allocated memory: 409.485 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 409.636 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mdsp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_396_1_VITIS_LOOP_398_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 16, loop 'VITIS_LOOP_396_1_VITIS_LOOP_398_2'
+WARNING: [HLS 200-871] Estimated clock period (3.647ns) exceeds the target (target clock period: 3.33ns, clock uncertainty: 0.8991ns, effective delay budget: 2.4309ns).
+Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'mdsp' consists of the following:	'fcmp' operation ('tmp_2', src/fft_top.cpp:402) [111]  (1.65 ns)
+	'and' operation ('and_ln402_1', src/fft_top.cpp:402) [112]  (0.122 ns)
+	'select' operation ('max_abs_matrix', src/fft_top.cpp:402) [113]  (0.227 ns)
+	'phi' operation ('max_abs_matrix') with incoming values : ('max_abs_matrix', src/fft_top.cpp:402) [71]  (0 ns)
+	'fcmp' operation ('tmp_2', src/fft_top.cpp:402) [111]  (1.65 ns)
+
+Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.6 seconds. CPU system time: 0 seconds. Elapsed time: 0.61 seconds; current allocated memory: 409.907 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.49 seconds. CPU system time: 0 seconds. Elapsed time: 1.5 seconds; current allocated memory: 410.477 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_entry24' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_entry24'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.27 seconds; current allocated memory: 411.170 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_Block_split1_proc18' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_Block_split1_proc18'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 412.564 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'data_copy_from_float_to_int64_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'data_copy_from_float_to_int64_config1_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 413.620 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_syn_config1_32_32_16_1_1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_syn_config1_32_32_16_1_1_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 415.440 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'data_copy_from_int64_to_float_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'data_copy_from_int64_to_float_config1_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.53 seconds. CPU system time: 0 seconds. Elapsed time: 0.52 seconds; current allocated memory: 416.067 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_Block_split15_proc19' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_Block_split15_proc19'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 417.977 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fft_config1_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fft_config1_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 420.126 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.67 seconds. CPU system time: 0 seconds. Elapsed time: 0.68 seconds; current allocated memory: 425.519 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mfft_2d_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mfft_2d_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.59 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.64 seconds; current allocated memory: 437.315 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s_sum_mult_M_value' to 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiplbkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s_sum_mult_M_value_1' to 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiplcud' due to the length limit 80
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_7_full_dsp_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fsub_32ns_32ns_32_7_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.59 seconds. CPU system time: 0 seconds. Elapsed time: 0.6 seconds; current allocated memory: 439.504 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mfft_2d_Loop_VITIS_LOOP_287_1_proc21' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mfft_2d_Loop_VITIS_LOOP_287_1_proc21'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.87 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.88 seconds; current allocated memory: 445.264 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mfft_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mfft_2d'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.49 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.54 seconds; current allocated memory: 455.126 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mdsp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'mdsp/in1' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mdsp/in2' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mdsp/shift_row' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mdsp/shift_col' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mdsp' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'd' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'r' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_1_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'fft_input_M_value_15' is power-on initialization.
+INFO: [RTGEN 206-100] Generating core module 'faddfsub_32ns_32ns_32_7_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mdsp'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.77 seconds. CPU system time: 0 seconds. Elapsed time: 0.78 seconds; current allocated memory: 458.309 MB.
+INFO: [RTMG 210-285] Implementing FIFO 'p_read_c_U(mdsp_fifo_w8_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_0_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_0_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_1_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_10_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_11_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_12_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_13_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_14_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_15_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_2_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_3_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_4_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_5_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_6_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_7_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_8_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_1_9_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_10_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_11_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_12_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_13_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_14_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_15_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_2_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_3_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_4_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_5_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_6_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_7_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_8_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'fft_input_M_value_9_c_U(mdsp_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fft_config1_Block_split1_proc18_U0_U(mdsp_start_for_fft_config1_Block_split1_proc18_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_data_copy_from_float_to_int64_config1_U0_U(mdsp_start_for_data_copy_from_float_to_int64_config1_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fft_syn_config1_32_32_16_1_1_U0_U(mdsp_start_for_fft_syn_config1_32_32_16_1_1_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_data_copy_from_int64_to_float_config1_U0_U(mdsp_start_for_data_copy_from_int64_to_float_config1_U0)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'start_for_fft_config1_Block_split15_proc19_U0_U(mdsp_start_for_fft_config1_Block_split15_proc19_U0)' using Shift Registers.
+INFO: [RTMG 210-278] Implementing memory 'mdsp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiplbkb_ram (RAM)' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'mdsp_fft_output_M_value_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'mdsp_matrix_mult_M_value_1_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 6 seconds. CPU system time: 0.12 seconds. Elapsed time: 6.13 seconds; current allocated memory: 469.049 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for mdsp.
+INFO: [VLOG 209-307] Generating Verilog RTL for mdsp.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 274.20 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 63.39 seconds. CPU system time: 1.67 seconds. Elapsed time: 65.2 seconds; current allocated memory: 472.552 MB.
+INFO: [HLS 200-1510] Running: cosim_design -rtl verilog -trace_level port 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+   Build using "/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/bin/g++"
+   Compiling apatb_mdsp_util.cpp
+   Compiling apatb_mdsp.cpp
+   Compiling main_2d_fft_test.cpp_pre.cpp.tb.cpp
+   Compiling fft_top.cpp_pre.cpp.tb.cpp
+   Compiling apatb_mdsp_ir.ll
+   Generating cosim.tv.exe
+INFO: [COSIM 212-302] Starting C TB testing ... 
+---------------------FFT 2D start 
+======OUTPUT : row is  -7 col is 7
+================================================================
+---------------------Impulse test Passed Successfully.
+================================================================
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source run_vivado_gen_ip.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'mdsp_ap_faddfsub_5_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mdsp_ap_faddfsub_5_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'mdsp_ap_faddfsub_5_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mdsp_ap_fcmp_0_no_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'mdsp_ap_fcmp_0_no_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'mdsp_ap_fsub_5_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mdsp_ap_fsub_5_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'mdsp_ap_fsub_5_full_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'mdsp_ap_fadd_5_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mdsp_ap_fadd_5_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'mdsp_ap_fadd_5_full_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'mdsp_fft_syn_config1_32_32_16_1_1_s_core' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'cyclic_prefix_insertion' from 'false' to '0' has been ignored for IP 'mdsp_fft_syn_config1_32_32_16_1_1_s_core'
+WARNING: [IP_Flow 19-3374] An attempt to modify the value of disabled parameter 'memory_options_hybrid' from 'false' to '0' has been ignored for IP 'mdsp_fft_syn_config1_32_32_16_1_1_s_core'
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mdsp_fft_syn_config1_32_32_16_1_1_s_core'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'mdsp_fft_syn_config1_32_32_16_1_1_s_core'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'mdsp_ap_fmul_2_max_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'mdsp_ap_fmul_2_max_dsp_32'...
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  5 17:16:34 2021...
+INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/xelab xil_defaultlib.apatb_mdsp_top glbl -prj mdsp.prj -L smartconnect_v1_0 -L axi_protocol_checker_v1_1_12 -L axi_protocol_checker_v1_1_13 -L axis_protocol_checker_v1_1_11 -L axis_protocol_checker_v1_1_12 -L xil_defaultlib -L unisims_ver -L xpm -L floating_point_v7_0_18 -L floating_point_v7_1_11 --lib ieee_proposed=./ieee_proposed -s mdsp -debug wave 
+Multi-threading is on. Using 2 slave threads.
+Determining compilation order of HDL files.
+WARNING: [XSIM 43-3431] One or more environment variables have been detected which affect the operation of the C compiler. These are typically not set in standard installations and are not tested by Xilinx, however they may be appropriate for your system, so the flow will attempt to continue.  If errors occur, try running xelab with the "-mt off -v 1" switches to see more information from the C compiler. The following environment variables have been detected:
+    LIBRARY_PATH
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ip/xil_defaultlib/mdsp_ap_faddfsub_5_full_dsp_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_ap_faddfsub_5_full_dsp_32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ip/xil_defaultlib/mdsp_ap_fcmp_0_no_dsp_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_ap_fcmp_0_no_dsp_32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ip/xil_defaultlib/mdsp_ap_fsub_5_full_dsp_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_ap_fsub_5_full_dsp_32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ip/xil_defaultlib/mdsp_ap_fadd_5_full_dsp_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_ap_fadd_5_full_dsp_32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ip/xil_defaultlib/mdsp_ap_fmul_2_max_dsp_32.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_ap_fmul_2_max_dsp_32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/glbl.v" into library work
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fifo_w64_d1_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w64_d1_S_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w64_d1_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/AESL_automem_in2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_in2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fft_config1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fft_config1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_data_copy_from_float_to_int64_config1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_data_copy_from_float_to_int64_config1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fifo_w8_d2_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w8_d2_S_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w8_d2_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_start_for_data_copy_from_int64_to_float_config1_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_data_copy_from_int64_to_float_config1_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_data_copy_from_int64_to_float_config1_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fft_syn_config1_32_32_16_1_1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fft_syn_config1_32_32_16_1_1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/AESL_deadlock_report_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_report_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fsub_32ns_32ns_32_7_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fsub_32ns_32ns_32_7_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fifo_w8_d1_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w8_d1_S_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w8_d1_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_mfft_2d_Loop_VITIS_LOOP_287_1_proc21.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_mfft_2d_Loop_VITIS_LOOP_287_1_proc21
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_start_for_fft_config1_Block_split15_proc19_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_fft_config1_Block_split15_proc19_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_fft_config1_Block_split15_proc19_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fcmp_32ns_32ns_1_2_no_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fcmp_32ns_32ns_1_2_no_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_faddfsub_32ns_32ns_32_7_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_faddfsub_32ns_32ns_32_7_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_start_for_fft_config1_Block_split1_proc18_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_fft_config1_Block_split1_proc18_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_fft_config1_Block_split1_proc18_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fadd_32ns_32ns_32_7_full_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fadd_32ns_32ns_32_7_full_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp.autotb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module apatb_mdsp_top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiplbkb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiplbkb_ram
+INFO: [VRFC 10-311] analyzing module mdsp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiplbkb
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fft_config1_Block_split15_proc19.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fft_config1_Block_split15_proc19
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/AESL_FPSim_pkg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ACMP_fadd_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fadd
+INFO: [VRFC 10-311] analyzing module ACMP_fsub_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fsub
+INFO: [VRFC 10-311] analyzing module ACMP_faddfsub_comb
+INFO: [VRFC 10-311] analyzing module ACMP_faddfsub
+INFO: [VRFC 10-311] analyzing module ACMP_fmul_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fmul
+INFO: [VRFC 10-311] analyzing module ACMP_fdiv_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fdiv
+INFO: [VRFC 10-311] analyzing module ACMP_fsqrt_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fsqrt
+INFO: [VRFC 10-311] analyzing module ACMP_frsqrt_comb
+INFO: [VRFC 10-311] analyzing module ACMP_frsqrt
+INFO: [VRFC 10-311] analyzing module ACMP_frecip_comb
+INFO: [VRFC 10-311] analyzing module ACMP_frecip
+INFO: [VRFC 10-311] analyzing module ACMP_flog_comb
+INFO: [VRFC 10-311] analyzing module ACMP_flog
+INFO: [VRFC 10-311] analyzing module ACMP_fexp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fexp
+INFO: [VRFC 10-311] analyzing module ACMP_dadd_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dadd
+INFO: [VRFC 10-311] analyzing module ACMP_dsub_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dsub
+INFO: [VRFC 10-311] analyzing module ACMP_dadddsub_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dadddsub
+INFO: [VRFC 10-311] analyzing module ACMP_dmul_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dmul
+INFO: [VRFC 10-311] analyzing module ACMP_ddiv_comb
+INFO: [VRFC 10-311] analyzing module ACMP_ddiv
+INFO: [VRFC 10-311] analyzing module ACMP_dsqrt_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dsqrt
+INFO: [VRFC 10-311] analyzing module ACMP_drsqrt_comb
+INFO: [VRFC 10-311] analyzing module ACMP_drsqrt
+INFO: [VRFC 10-311] analyzing module ACMP_drecip_comb
+INFO: [VRFC 10-311] analyzing module ACMP_drecip
+INFO: [VRFC 10-311] analyzing module ACMP_dlog_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dlog
+INFO: [VRFC 10-311] analyzing module ACMP_dexp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dexp
+INFO: [VRFC 10-311] analyzing module ACMP_fcmp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fcmp
+INFO: [VRFC 10-311] analyzing module ACMP_dcmp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dcmp
+INFO: [VRFC 10-311] analyzing module ACMP_fptosi_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fptosi
+INFO: [VRFC 10-311] analyzing module ACMP_dptosi_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dptosi
+INFO: [VRFC 10-311] analyzing module ACMP_sitofp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_sitofp
+INFO: [VRFC 10-311] analyzing module ACMP_sitodp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_sitodp
+INFO: [VRFC 10-311] analyzing module ACMP_fptoui_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fptoui
+INFO: [VRFC 10-311] analyzing module ACMP_dptoui_comb
+INFO: [VRFC 10-311] analyzing module ACMP_dptoui
+INFO: [VRFC 10-311] analyzing module ACMP_uitofp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_uitofp
+INFO: [VRFC 10-311] analyzing module ACMP_uitodp_comb
+INFO: [VRFC 10-311] analyzing module ACMP_uitodp
+INFO: [VRFC 10-311] analyzing module ACMP_fpext_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fpext
+INFO: [VRFC 10-311] analyzing module ACMP_fptrunc_comb
+INFO: [VRFC 10-311] analyzing module ACMP_fptrunc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_start_for_data_copy_from_float_to_int64_config1_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_data_copy_from_float_to_int64_config1_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_data_copy_from_float_to_int64_config1_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fft_config1_entry24.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fft_config1_entry24
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_data_copy_from_int64_to_float_config1_s.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_data_copy_from_int64_to_float_config1_s
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/AESL_automem_in1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module AESL_automem_in1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_mfft_2d_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_mfft_2d_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_mfft_2d.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_mfft_2d
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fifo_w32_d2_S.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w32_d2_S_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_fifo_w32_d2_S
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fmul_32ns_32ns_32_4_max_dsp_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fmul_32ns_32ns_32_4_max_dsp_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fft_output_M_value.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fft_output_M_value_ram
+INFO: [VRFC 10-311] analyzing module mdsp_fft_output_M_value
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_fft_config1_Block_split1_proc18.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_fft_config1_Block_split1_proc18
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_start_for_fft_syn_config1_32_32_16_1_1_U0.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_fft_syn_config1_32_32_16_1_1_U0_shiftReg
+INFO: [VRFC 10-311] analyzing module mdsp_start_for_fft_syn_config1_32_32_16_1_1_U0
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp_matrix_mult_M_value_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mdsp_matrix_mult_M_value_1_ram
+INFO: [VRFC 10-311] analyzing module mdsp_matrix_mult_M_value_1
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/sample_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/df_fifo_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/nodf_module_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/dump_file_agent.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/nodf_module_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/nodf_module_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/sample_manager.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/csv_file_dump.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/df_process_monitor.sv" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [df_fifo_interface.sv:4]
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [df_process_interface.sv:4]
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'nodf_module_intf' [/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/nodf_module_interface.sv:4]
+INFO: [VRFC 10-311] analyzing module dataflow_monitor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/df_process_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_process_intf' [/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/df_process_interface.sv:4]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/df_fifo_interface.sv" into library xil_defaultlib
+WARNING: [VRFC 10-3609] overwriting previous definition of interface 'df_fifo_intf' [/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/df_fifo_interface.sv:4]
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ieee_FP_pkg/fixed_float_types_c.vhd" into library ieee_proposed
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ieee_FP_pkg/fixed_pkg_c.vhd" into library ieee_proposed
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ieee_FP_pkg/float_pkg_c.vhd" into library ieee_proposed
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ieee_FP_pkg/aesl_fp_wrapper.vhd" into library ieee_proposed
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FAdd'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FSub'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FAddFSub'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FMul'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FDiv'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FSqrt'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FRSqrt'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FRecip'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FLog'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FExp'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DAdd'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DSub'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DAddDSub'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DMul'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DDiv'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DSqrt'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DRSqrt'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DRecip'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DLog'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DExp'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_FCmp'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DCmp'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_SPToSI'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DPToSI'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_SIToSP'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_SIToDP'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_SPToUI'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DPToUI'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_UIToSP'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_UIToDP'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_SPToDP'
+INFO: [VRFC 10-3107] analyzing entity 'AESL_WP_DPToSP'
+INFO: [VRFC 10-163] Analyzing VHDL file "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ip/xil_defaultlib/mdsp_fft_syn_config1_32_32_16_1_1_s_core.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'mdsp_fft_syn_config1_32_32_16_1_1_s_core'
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [#UNDEF] Note: "in get_registers " [/wrk/ci/prod/2020.2/sw/continuous/733/packages/customer/vivado/data/ip/xilinx/floating_point_v7_0/hdl/floating_point_v7_0_vh_rfs.vhd:12499]
+WARNING: [#UNDEF] Note: "in get_registers " [/wrk/ci/prod/2020.2/sw/continuous/733/packages/customer/vivado/data/ip/xilinx/floating_point_v7_0/hdl/floating_point_v7_0_vh_rfs.vhd:12499]
+WARNING: [VRFC 10-3499] library name 'xfft_v9_1_5' of instantiated unit conflicts with visible identifier [/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/ip/xil_defaultlib/mdsp_fft_syn_config1_32_32_16_1_1_s_core.vhd:199]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package xbip_utils_v3_0_10.xbip_utils_v3_0_10_pkg
+Compiling package xfft_v9_1_5.xfft_v9_1_5_viv_comp
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package ieee.math_real
+Compiling package axi_utils_v2_0_6.axi_utils_v2_0_6_pkg
+Compiling package mult_gen_v12_0_16.mult_gen_v12_0_16_pkg
+Compiling package ieee.std_logic_signed
+Compiling package cmpy_v6_0_19.cmpy_v6_0_19_pkg
+Compiling package floating_point_v7_0_18.floating_point_v7_0_18_consts
+Compiling package floating_point_v7_0_18.floating_point_v7_0_18_exp_table...
+Compiling package floating_point_v7_0_18.floating_point_v7_0_18_pkg
+Compiling package xfft_v9_1_5.pkg
+Compiling package xfft_v9_1_5.xfft_v9_1_5_axi_pkg
+Compiling package axi_utils_v2_0_6.global_util_pkg
+Compiling package axi_utils_v2_0_6.axi_utils_comps
+Compiling package unisim.vcomponents
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_pkg
+Compiling package c_mux_bit_v12_0_6.c_mux_bit_v12_0_6_viv_comp
+Compiling package c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv_comp
+Compiling package xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv_comp
+Compiling package xbip_addsub_v3_0_6.xbip_addsub_v3_0_6_viv_comp
+Compiling package c_addsub_v12_0_14.c_addsub_v12_0_14_pkg
+Compiling package c_addsub_v12_0_14.c_addsub_v12_0_14_pkg_legacy
+Compiling package floating_point_v7_0_18.floating_point_v7_0_18_viv_comp
+Compiling package floating_point_v7_0_18.flt_utils
+Compiling package xfft_v9_1_5.quarter_sin_tw_table
+Compiling package xfft_v9_1_5.quarter2_sin_tw_table
+Compiling package mult_gen_v12_0_16.dsp_pkg
+Compiling package xpm.vcomponents
+Compiling package ieee.std_logic_textio
+Compiling package floating_point_v7_0_18.vt2mutils
+Compiling package floating_point_v7_0_18.vt2mcomps
+Compiling package floating_point_v7_1_11.floating_point_v7_1_11_viv_comp
+Compiling package floating_point_v7_1_11.floating_point_v7_1_11_consts
+Compiling package floating_point_v7_1_11.floating_point_v7_1_11_exp_table...
+Compiling package floating_point_v7_1_11.floating_point_v7_1_11_pkg
+Compiling package floating_point_v7_1_11.flt_utils
+Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
+Compiling module xil_defaultlib.mdsp_fft_output_M_value_ram
+Compiling module xil_defaultlib.mdsp_fft_output_M_value(DataWidt...
+Compiling module xil_defaultlib.mdsp_matrix_mult_M_value_1_ram
+Compiling module xil_defaultlib.mdsp_matrix_mult_M_value_1(DataW...
+Compiling module xil_defaultlib.mdsp_fft_config1_entry24
+Compiling module xil_defaultlib.mdsp_fft_config1_Block_split1_pr...
+Compiling module xil_defaultlib.mdsp_data_copy_from_float_to_int...
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_srl_fifo [\glb_srl_fifo(width=1,has_uvprot...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_ifx_master [\glb_ifx_master(width=1,afull_th...]
+Compiling architecture synth of entity xfft_v9_1_5.axi_wrapper_output_fifo [\axi_wrapper_output_fifo(c_fifo_...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_srl_fifo [\glb_srl_fifo(width=5,has_uvprot...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_ifx_slave [\glb_ifx_slave(width=5,has_uvpro...]
+Compiling architecture synth of entity xfft_v9_1_5.axi_wrapper_input_fifo [\axi_wrapper_input_fifo(c_fifo_w...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_srl_fifo [\glb_srl_fifo(width=65,has_uvpro...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_ifx_slave [\glb_ifx_slave(width=65,has_uvpr...]
+Compiling architecture synth of entity xfft_v9_1_5.axi_wrapper_input_fifo [\axi_wrapper_input_fifo(c_fifo_w...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_srl_fifo [\glb_srl_fifo(width=66,has_uvpro...]
+Compiling architecture xilinx of entity axi_utils_v2_0_6.glb_ifx_master [\glb_ifx_master(width=66,afull_t...]
+Compiling architecture synth of entity xfft_v9_1_5.axi_wrapper_output_fifo [\axi_wrapper_output_fifo(c_fifo_...]
+Compiling architecture synth of entity xfft_v9_1_5.axi_wrapper [\axi_wrapper(c_nfft_max=4,c_arch...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.pipe_blank [\pipe_blank(c_xdevicefamily="vir...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.dist_mem [\dist_mem(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_memory [\r22_memory(c_xdevicefamily="vir...]
+Compiling architecture srl16e_v of entity unisim.SRL16E [\SRL16E(0,15)\]
+Compiling architecture fdre_v of entity unisim.FDRE [fdre_default]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.pipe_blank [\pipe_blank(c_xdevicefamily="vir...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_sync_pri...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=4,...]
+Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
+Compiling architecture xorcy_v of entity unisim.XORCY [xorcy_default]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder_bypass [\adder_bypass(c_xdevicefamily="v...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=4,...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder_bypass [\adder_bypass(c_xdevicefamily="v...]
+Compiling architecture ram64x1d_v of entity unisim.RAM64X1D [ram64x1d_default]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.dist_mem [\dist_mem(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_memory [\r22_memory(c_xdevicefamily="vir...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=9,...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder [\adder(c_xdevicefamily="virtexup...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=8,...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder_bypass [\adder_bypass(c_xdevicefamily="v...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.fp_get_block_max_exp [\fp_get_block_max_exp(c_xdevicef...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="00000000000000000000...]
+Compiling architecture fde_v of entity unisim.FDE [fde_default]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=10...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.subtracter [\subtracter(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [delay_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=23)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=4,length=0)\]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="no...]
+Compiling architecture synth of entity floating_point_v7_0_18.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_0_18.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=9)\]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay_s [\delay_s(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=2,length=4,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(length=4,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=2,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=16)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=2)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=2,length=2)\]
+Compiling architecture muxf7_v of entity unisim.MUXF7 [muxf7_default]
+Compiling architecture muxf8_v of entity unisim.MUXF8 [muxf8_default]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=6,length=0)\]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_0_18.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_0_18.zero_det_sel [\zero_det_sel(c_xdevicefamily="v...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=27)\]
+Compiling architecture rtl of entity floating_point_v7_0_18.shift_msb_first [\shift_msb_first(a_width=24,resu...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(length=3)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=28,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=29)\]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_0_18.flt_to_fix_conv [\flt_to_fix_conv(c_xdevicefamily...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture xilinx of entity floating_point_v7_0_18.floating_point_v7_0_18_viv [\floating_point_v7_0_18_viv(c_xd...]
+Compiling architecture xilinx of entity xfft_v9_1_5.fp_convert_to_block_fp [\fp_convert_to_block_fp(c_xdevic...]
+Compiling architecture xilinx of entity xfft_v9_1_5.equ_rtl [\equ_rtl(c_xdevicefamily="virtex...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_cnt_ctrl [\r22_cnt_ctrl(c_xdevicefamily="v...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_cnt_ctrl [\r22_cnt_ctrl(c_xdevicefamily="v...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture fd_v of entity unisim.FD [fd_default]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=28...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder [\adder(c_xdevicefamily="virtexup...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="11001010")(0,7)\]
+Compiling architecture xilinx of entity xfft_v9_1_5.mux_bus2 [\mux_bus2(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.mux_bus2 [\mux_bus2(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_bf_sp [\r22_bf_sp(c_xdevicefamily="virt...]
+Compiling architecture synth of entity xfft_v9_1_5.r22_twos_comp_mux [\r22_twos_comp_mux(c_xdevicefami...]
+Compiling architecture synth of entity xfft_v9_1_5.r22_twos_comp_mux [\r22_twos_comp_mux(c_xdevicefami...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=29...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder [\adder(c_xdevicefamily="virtexup...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.mux_bus2 [\mux_bus2(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_bf_sp [\r22_bf_sp(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder [\adder(c_xdevicefamily="virtexup...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111111000000001111...]
+Compiling architecture xilinx of entity xfft_v9_1_5.mux_bus4 [\mux_bus4(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.twgen_distmem [\twgen_distmem(theta_width=3,twi...]
+Compiling architecture xilinx of entity xfft_v9_1_5.twiddle_gen [\twiddle_gen(c_xdevicefamily="vi...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_tw_gen [\r22_tw_gen(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=2,alumodereg=0...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(alumodereg=0,amultsel="...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.op_resize [\op_resize(ai_width=27,bi_width=...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.dsp [\dsp(c_xdevicefamily="virtexuplu...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.cmpy_3_dsp48_mult [\cmpy_3_dsp48_mult(c_xdevicefami...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(acascreg=2,alumodereg=0...]
+Compiling architecture dsp48e2_v of entity unisim.DSP48E2 [\DSP48E2(alumodereg=0,a_input="C...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.op_resize [\op_resize(ai_width=26,bi_width=...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.dsp [\dsp(c_xdevicefamily="virtexuplu...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.cmpy_3_dsp48_mult [\cmpy_3_dsp48_mult(c_xdevicefami...]
+Compiling architecture xilinx of entity mult_gen_v12_0_16.dsp [\dsp(c_xdevicefamily="virtexuplu...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.cmpy_3_dsp48_mult [\cmpy_3_dsp48_mult(c_xdevicefami...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.input_negation [\input_negation(c_xdevicefamily=...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.delay_line [\delay_line(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.cmpy_3_dsp48 [\cmpy_3_dsp48(c_xdevicefamily="v...]
+Compiling architecture xilinx of entity cmpy_v6_0_19.cmpy_v6_0_19_synth [\cmpy_v6_0_19_synth(c_xdevicefam...]
+Compiling architecture xilinx of entity xfft_v9_1_5.cmpy [\cmpy(c_xdevicefamily="virtexupl...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_pe [\r22_pe(c_xdevicefamily="virtexu...]
+Compiling architecture synth of entity xfft_v9_1_5.srl_fifo [\srl_fifo(c_width=1)\]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=31...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder [\adder(c_xdevicefamily="virtexup...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.mux_bus2 [\mux_bus2(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.mux_bus2 [\mux_bus2(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_bf_sp [\r22_bf_sp(c_xdevicefamily="virt...]
+Compiling architecture synth of entity xfft_v9_1_5.r22_twos_comp_mux [\r22_twos_comp_mux(c_xdevicefami...]
+Compiling architecture synth of entity xfft_v9_1_5.r22_twos_comp_mux [\r22_twos_comp_mux(c_xdevicefami...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=32...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder [\adder(c_xdevicefamily="virtexup...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.mux_bus2 [\mux_bus2(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_bf_sp [\r22_bf_sp(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_pe [\r22_pe(c_xdevicefamily="virtexu...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture rb18_internal_vhdl_v of entity unisim.RB18_INTERNAL_VHDL [\RB18_INTERNAL_VHDL(bram_size=18...]
+Compiling architecture ramb18e1_v of entity unisim.RAMB18E1 [\RAMB18E1(doa_reg=1,dob_reg=1,ra...]
+Compiling architecture xilinx of entity xfft_v9_1_5.dpm [\dpm(c_xdevicefamily="virtexuplu...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_memory [\r22_memory(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_busy [\r22_busy(c_xdevicefamily="virte...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture fdse_v of entity unisim.FDSE [fdse_default]
+Compiling architecture xilinx of entity xfft_v9_1_5.cnt_sat [\cnt_sat(c_xdevicefamily="virtex...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.cnt_sat [\cnt_sat(c_xdevicefamily="virtex...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.cnt_sat [\cnt_sat(c_xdevicefamily="virtex...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.cnt_sat [\cnt_sat(c_xdevicefamily="virtex...]
+Compiling architecture structural of entity c_reg_fd_v12_0_6.c_reg_fd_v12_0_6_viv [\c_reg_fd_v12_0_6_viv(c_width=4,...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="10010000000010010000...]
+Compiling architecture xilinx of entity xfft_v9_1_5.equ_rtl [\equ_rtl(c_xdevicefamily="virtex...]
+Compiling architecture xilinx of entity xfft_v9_1_5.cnt_tc_rtl_a [\cnt_tc_rtl_a(c_xdevicefamily="v...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_flow_ctrl [\r22_flow_ctrl(c_xdevicefamily="...]
+Compiling architecture lut3_v of entity unisim.LUT3 [\LUT3(init="10101110")(0,7)\]
+Compiling architecture xilinx of entity xfft_v9_1_5.r22_cnt_ctrl [\r22_cnt_ctrl(c_xdevicefamily="v...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture fdr_v of entity unisim.FDR [fdr_default]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.xfft_v9_1_5_d [\xfft_v9_1_5_d(c_xdevicefamily="...]
+Compiling architecture synth of entity xfft_v9_1_5.xfft_v9_1_5_core [\xfft_v9_1_5_core(c_xdevicefamil...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture struct of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_legacy [\c_shift_ram_v12_0_14_legacy(c_x...]
+Compiling architecture synth of entity c_shift_ram_v12_0_14.c_shift_ram_v12_0_14_viv [\c_shift_ram_v12_0_14_viv(c_xdev...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.pipe_blank [\pipe_blank(c_xdevicefamily="vir...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=4)\]
+Compiling architecture rtl of entity floating_point_v7_0_18.norm_zero_det [\norm_zero_det(data_width=7,norm...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=31,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=32)\]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_0_18.mux4 [\mux4(c_xdevicefamily="virtexupl...]
+Compiling architecture rtl of entity floating_point_v7_0_18.mux4 [\mux4(c_xdevicefamily="virtexupl...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_0_18.lead_zero_encode [\lead_zero_encode(c_xdevicefamil...]
+Compiling architecture rtl of entity floating_point_v7_0_18.shift_msb_first [\shift_msb_first(a_width=32,resu...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=8)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=11,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=12)\]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=11)\]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=14,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=25,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=3,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_0_18.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_0_18.flt_round_bit [\flt_round_bit(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_0_18.renorm_and_round_logic [\renorm_and_round_logic(c_xdevic...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(length=5)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(length=2)\]
+Compiling architecture synth of entity floating_point_v7_0_18.fix_to_flt_conv_exp [\fix_to_flt_conv_exp(c_xdevicefa...]
+Compiling architecture synth of entity floating_point_v7_0_18.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture struct of entity floating_point_v7_0_18.fix_to_flt_conv [\fix_to_flt_conv(c_xdevicefamily...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_0_18.delay [\delay(width=32,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_0_18.floating_point_v7_0_18_viv [\floating_point_v7_0_18_viv(c_xd...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture rtl of entity c_addsub_v12_0_14.c_addsub_v12_0_14_lut6_legacy [\c_addsub_v12_0_14_lut6_legacy(c...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_fabric_legacy [\c_addsub_v12_0_14_fabric_legacy...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_legacy [\c_addsub_v12_0_14_legacy(c_fami...]
+Compiling architecture synth of entity c_addsub_v12_0_14.c_addsub_v12_0_14_viv [\c_addsub_v12_0_14_viv(c_xdevice...]
+Compiling architecture xilinx of entity xfft_v9_1_5.adder [\adder(c_xdevicefamily="virtexup...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.logic_gate [\logic_gate(c_xdevicefamily="vir...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.shift_ram [\shift_ram(c_xdevicefamily="virt...]
+Compiling architecture xilinx of entity xfft_v9_1_5.fp_convert_to_fp [\fp_convert_to_fp(c_xdevicefamil...]
+Compiling architecture xilinx of entity xfft_v9_1_5.fp_shift_ram_clr_op [\fp_shift_ram_clr_op(c_xdevicefa...]
+Compiling architecture xilinx of entity xfft_v9_1_5.fp_shift_ram_clr_op [\fp_shift_ram_clr_op(c_xdevicefa...]
+Compiling architecture xilinx of entity xfft_v9_1_5.xfft_v9_1_5_fp [\xfft_v9_1_5_fp(c_xdevicefamily=...]
+Compiling architecture synth of entity xfft_v9_1_5.xfft_v9_1_5_core [\xfft_v9_1_5_core(c_xdevicefamil...]
+Compiling architecture synth of entity xfft_v9_1_5.xfft_v9_1_5_viv [\xfft_v9_1_5_viv(c_xdevicefamily...]
+Compiling architecture xilinx of entity xfft_v9_1_5.xfft_v9_1_5 [\xfft_v9_1_5(c_xdevicefamily="vi...]
+Compiling architecture mdsp_fft_syn_config1_32_32_16_1_1_s_core_arch of entity xil_defaultlib.mdsp_fft_syn_config1_32_32_16_1_1_s_core [mdsp_fft_syn_config1_32_32_16_1_...]
+Compiling module xil_defaultlib.mdsp_fft_syn_config1_32_32_16_1_...
+Compiling module xil_defaultlib.mdsp_data_copy_from_int64_to_flo...
+Compiling module xil_defaultlib.mdsp_fft_config1_Block_split15_p...
+Compiling module xil_defaultlib.mdsp_fifo_w8_d2_S_shiftReg
+Compiling module xil_defaultlib.mdsp_fifo_w8_d2_S
+Compiling module xil_defaultlib.mdsp_fifo_w32_d2_S_shiftReg
+Compiling module xil_defaultlib.mdsp_fifo_w32_d2_S
+Compiling module xil_defaultlib.mdsp_fifo_w8_d1_S_shiftReg
+Compiling module xil_defaultlib.mdsp_fifo_w8_d1_S
+Compiling module xil_defaultlib.mdsp_fifo_w64_d1_S_shiftReg
+Compiling module xil_defaultlib.mdsp_fifo_w64_d1_S
+Compiling module xil_defaultlib.mdsp_start_for_fft_config1_Block...
+Compiling module xil_defaultlib.mdsp_start_for_fft_config1_Block...
+Compiling module xil_defaultlib.mdsp_start_for_data_copy_from_fl...
+Compiling module xil_defaultlib.mdsp_start_for_data_copy_from_fl...
+Compiling module xil_defaultlib.mdsp_start_for_fft_syn_config1_3...
+Compiling module xil_defaultlib.mdsp_start_for_fft_syn_config1_3...
+Compiling module xil_defaultlib.mdsp_start_for_data_copy_from_in...
+Compiling module xil_defaultlib.mdsp_start_for_data_copy_from_in...
+Compiling module xil_defaultlib.mdsp_start_for_fft_config1_Block...
+Compiling module xil_defaultlib.mdsp_start_for_fft_config1_Block...
+Compiling module xil_defaultlib.mdsp_fft_config1_s
+Compiling module xil_defaultlib.mdsp_mfft_2d_1_Loop_VITIS_LOOP_2...
+Compiling module xil_defaultlib.mdsp_mfft_2d_1
+Compiling module xil_defaultlib.mdsp_mfft_2d_Loop_VITIS_LOOP_287...
+Compiling module xil_defaultlib.mdsp_mfft_2d
+Compiling module xil_defaultlib.mdsp_matrix_multiply_alt2_NoTran...
+Compiling module xil_defaultlib.mdsp_matrix_multiply_alt2_NoTran...
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=7,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=24,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=16,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [delay_default]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,alumodereg=0...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=4,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=48,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=24,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.dsp48e1_wrapper [\dsp48e1_wrapper(c_part="xcu200-...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(length=2)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=13)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=27)\]
+Compiling architecture synth of entity floating_point_v7_1_11.align_add_dsp48e1_sgl [\align_add_dsp48e1_sgl(c_xdevice...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000001111...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00000000000000000000...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=27,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=5,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.lead_zero_encode_shift [\lead_zero_encode_shift(ab_fw=24...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=3,length=0)\]
+Compiling architecture lut6_v of entity unisim.LUT6 [\LUT6(init="11111110010101001011...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="00010001010111110000...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11101110101000001111...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=2)\]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(adreg=0,alumodereg=0,ca...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=25,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,c_wi...]
+Compiling architecture rtl of entity floating_point_v7_1_11.norm_and_round_dsp48e1_sgl [\norm_and_round_dsp48e1_sgl(c_mu...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="10011001100110011001...]
+Compiling architecture lut5_v of entity unisim.LUT5 [\LUT5(init="11111111000000001111...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=9,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=8,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=9,length=2)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=10)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=4,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_gt [\compare_gt(c_xdevicefamily="vir...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare [\compare(c_xdevicefamily="virtex...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=8)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=9)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=2,length=3,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(length=3,fast_input=true)...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(length=0,fast_input=true)...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=2,length=0,fast_inp...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=12,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.flt_add_exp_sp [\flt_add_exp_sp(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=23)\]
+Compiling architecture synth of entity floating_point_v7_1_11.flt_dec_op [\flt_dec_op(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_11.flt_add_dsp [\flt_add_dsp(c_xdevicefamily="vi...]
+Compiling architecture rtl of entity floating_point_v7_1_11.flt_add [\flt_add(c_xdevicefamily="virtex...]
+Compiling module unisims_ver.x_lut1_mux2
+Compiling module unisims_ver.LUT1
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=32,length=0)\]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11_viv [\floating_point_v7_1_11_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11 [\floating_point_v7_1_11(c_xdevic...]
+Compiling module xil_defaultlib.mdsp_ap_fadd_5_full_dsp_32
+Compiling module xil_defaultlib.mdsp_fadd_32ns_32ns_32_7_full_ds...
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=17,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture rtl of entity floating_point_v7_1_11.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=24,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_11.fix_mult_dsp48e1_sgl [\fix_mult_dsp48e1_sgl(registers=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.fix_mult [\fix_mult(c_xdevicefamily="virte...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=8,length=0,fast_inp...]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_11.special_detect [\special_detect(c_xdevicefamily=...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=2,fast_input=true)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=4,fast_input=true)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=3,length=0,fast_inp...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=14,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.flt_mult_exp [\flt_mult_exp(c_xdevicefamily="v...]
+Compiling architecture dsp48e1_v of entity unisim.DSP48E1 [\DSP48E1(acascreg=0,adreg=0,alum...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=30,length=0)\]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=18,length=0)\]
+Compiling architecture rtl of entity floating_point_v7_1_11.dsp48e1_wrapper [\dsp48e1_wrapper(a_width=30,b_wi...]
+Compiling architecture struct of entity floating_point_v7_1_11.flt_round_dsp_opt_full [\flt_round_dsp_opt_full(c_xdevic...]
+Compiling architecture rtl of entity floating_point_v7_1_11.flt_mult_round [\flt_mult_round(c_xdevicefamily=...]
+Compiling architecture synth of entity floating_point_v7_1_11.flt_dec_op_lat [\flt_dec_op_lat(c_xdevicefamily=...]
+Compiling architecture rtl of entity floating_point_v7_1_11.flt_mult [\flt_mult(c_xdevicefamily="virte...]
+Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_latency=...]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11_viv [\floating_point_v7_1_11_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11 [\floating_point_v7_1_11(c_xdevic...]
+Compiling module xil_defaultlib.mdsp_ap_fmul_2_max_dsp_32
+Compiling module xil_defaultlib.mdsp_fmul_32ns_32ns_32_4_max_dsp...
+Compiling module xil_defaultlib.mdsp_matrix_multiply_alt2_NoTran...
+Compiling architecture rtl of entity floating_point_v7_1_11.flt_add [\flt_add(c_xdevicefamily="virtex...]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11_viv [\floating_point_v7_1_11_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11 [\floating_point_v7_1_11(c_xdevic...]
+Compiling module xil_defaultlib.mdsp_ap_faddfsub_5_full_dsp_32
+Compiling module xil_defaultlib.mdsp_faddfsub_32ns_32ns_32_7_ful...
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_ne_im [\compare_ne_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=2,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_eq_im [\compare_eq_im(c_xdevicefamily="...]
+Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=11,length=0)\]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_eq [\compare_eq(c_xdevicefamily="vir...]
+Compiling architecture struct of entity floating_point_v7_1_11.carry_chain [\carry_chain(c_xdevicefamily="vi...]
+Compiling architecture synth of entity floating_point_v7_1_11.compare_gt [\compare_gt(c_xdevicefamily="vir...]
+Compiling architecture rtl of entity floating_point_v7_1_11.fp_cmp [\fp_cmp(c_xdevicefamily="virtexu...]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11_viv [\floating_point_v7_1_11_viv(c_xd...]
+Compiling architecture xilinx of entity floating_point_v7_1_11.floating_point_v7_1_11 [\floating_point_v7_1_11(c_xdevic...]
+Compiling module xil_defaultlib.mdsp_ap_fcmp_0_no_dsp_32
+Compiling module xil_defaultlib.mdsp_fcmp_32ns_32ns_1_2_no_dsp_1...
+Compiling module xil_defaultlib.mdsp
+Compiling module xil_defaultlib.AESL_automem_in1
+Compiling module xil_defaultlib.AESL_automem_in2
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detect_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_report_unit(PROC_N...
+Compiling module xil_defaultlib.AESL_deadlock_detector_1
+Compiling module xil_defaultlib.df_fifo_intf
+Compiling module xil_defaultlib.df_process_intf
+Compiling module xil_defaultlib.nodf_module_intf
+Compiling module xil_defaultlib.dataflow_monitor_1
+Compiling module xil_defaultlib.apatb_mdsp_top
+Compiling module work.glbl
+Built simulation snapshot mdsp
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source /home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/xsim.dir/mdsp/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Tue Jan  5 17:17:46 2021...
+
+****** xsim v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source xsim.dir/mdsp/xsim_script.tcl
+# xsim {mdsp} -view {{mdsp_dataflow_ana.wcfg}} -tclbatch {mdsp.tcl} -protoinst {mdsp.protoinst}
+Vivado Simulator 2020.2
+INFO: [Wavedata 42-565] Reading protoinst file mdsp.protoinst
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp//AESL_inst_mdsp_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s_fu_443/grp_matrix_multiply_alt2_NoTranspose_NoTranspose_16_16_16_16_16_16_matrix_multiply_traits_NoTranspose_NoTranspose_16_16_16_16_complex_float_complex_float_complex_float_complex_float_s_fu_443_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/grp_mfft_2d_1_fu_281_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/grp_fft_config1_s_fu_982/data_copy_from_float_to_int64_config1_U0/data_copy_from_float_to_int64_config1_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/grp_fft_config1_s_fu_982/data_copy_from_int64_to_float_config1_U0/data_copy_from_int64_to_float_config1_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/grp_fft_config1_s_fu_982/fft_config1_Block_split15_proc19_U0/fft_config1_Block_split15_proc19_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/grp_fft_config1_s_fu_982/fft_config1_Block_split1_proc18_U0/fft_config1_Block_split1_proc18_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/grp_fft_config1_s_fu_982/fft_config1_entry24_U0/fft_config1_entry24_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/grp_fft_config1_s_fu_982/fft_syn_config1_32_32_16_1_1_U0/fft_syn_config1_32_32_16_1_1_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/grp_fft_config1_s_fu_982/grp_fft_config1_s_fu_982_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_1_fu_281/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0/mfft_2d_1_Loop_VITIS_LOOP_287_1_proc20_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/grp_mfft_2d_fu_363_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/grp_fft_config1_s_fu_1086/data_copy_from_float_to_int64_config1_U0/data_copy_from_float_to_int64_config1_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/grp_fft_config1_s_fu_1086/data_copy_from_int64_to_float_config1_U0/data_copy_from_int64_to_float_config1_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/grp_fft_config1_s_fu_1086/fft_config1_Block_split15_proc19_U0/fft_config1_Block_split15_proc19_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/grp_fft_config1_s_fu_1086/fft_config1_Block_split1_proc18_U0/fft_config1_Block_split1_proc18_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/grp_fft_config1_s_fu_1086/fft_config1_entry24_U0/fft_config1_entry24_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/grp_fft_config1_s_fu_1086/fft_syn_config1_32_32_16_1_1_U0/fft_syn_config1_32_32_16_1_1_U0_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/grp_fft_config1_s_fu_1086/grp_fft_config1_s_fu_1086_activity
+INFO: [Wavedata 42-564]   Found protocol instance at /apatb_mdsp_top/AESL_inst_mdsp/grp_mfft_2d_fu_363/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0/mfft_2d_Loop_VITIS_LOOP_287_1_proc21_U0_activity
+Time resolution is 1 ps
+open_wave_config mdsp_dataflow_ana.wcfg
+source mdsp.tcl
+## log_wave [get_objects -filter {type == in_port || type == out_port || type == inout_port || type == port} /apatb_mdsp_top/AESL_inst_mdsp/*]
+## set designtopgroup [add_wave_group "Design Top Signals"]
+## set cinoutgroup [add_wave_group "C InOuts" -into $designtopgroup]
+## set in2_group [add_wave_group in2(memory) -into $cinoutgroup]
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in2_q0 -into $in2_group -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in2_d0 -into $in2_group -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in2_we0 -into $in2_group -color #ffff00 -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in2_ce0 -into $in2_group -color #ffff00 -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in2_address0 -into $in2_group -radix hex
+## set in1_group [add_wave_group in1(memory) -into $cinoutgroup]
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in1_q0 -into $in1_group -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in1_d0 -into $in1_group -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in1_we0 -into $in1_group -color #ffff00 -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in1_ce0 -into $in1_group -color #ffff00 -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/in1_address0 -into $in1_group -radix hex
+## set coutputgroup [add_wave_group "C Outputs" -into $designtopgroup]
+## set shift_col_group [add_wave_group shift_col(wire) -into $coutputgroup]
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/shift_col_ap_vld -into $shift_col_group -color #ffff00 -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/shift_col -into $shift_col_group -radix hex
+## set shift_row_group [add_wave_group shift_row(wire) -into $coutputgroup]
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/shift_row_ap_vld -into $shift_row_group -color #ffff00 -radix hex
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/shift_row -into $shift_row_group -radix hex
+## set blocksiggroup [add_wave_group "Block-level IO Handshake" -into $designtopgroup]
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/ap_start -into $blocksiggroup
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/ap_done -into $blocksiggroup
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/ap_idle -into $blocksiggroup
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/ap_ready -into $blocksiggroup
+## set resetgroup [add_wave_group "Reset" -into $designtopgroup]
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/ap_rst -into $resetgroup
+## set clockgroup [add_wave_group "Clock" -into $designtopgroup]
+## add_wave /apatb_mdsp_top/AESL_inst_mdsp/ap_clk -into $clockgroup
+## save_wave_config mdsp.wcfg
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [n/a] @ "109000"
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 59684130 ps  Iteration: 9  Process: /apatb_mdsp_top/AESL_inst_mdsp/faddfsub_32ns_32ns_32_7_full_dsp_1_U354/mdsp_ap_faddfsub_5_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /tools/Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+// RTL Simulation : 1 / 1 [n/a] @ "82409000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 82422850 ps : File "/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1/sim/verilog/mdsp.autotb.v" Line 393
+run: Time (s): cpu = 00:00:12 ; elapsed = 00:01:13 . Memory (MB): peak = 2900.605 ; gain = 0.000 ; free physical = 5391 ; free virtual = 16339
+## quit
+INFO: [Common 17-206] Exiting xsim at Tue Jan  5 17:19:11 2021...
+INFO: [COSIM 212-316] Starting C post checking ...
+---------------------FFT 2D start 
+======OUTPUT : row is  -7 col is 7
+================================================================
+---------------------Impulse test Passed Successfully.
+================================================================
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 260.47 seconds. CPU system time: 6.77 seconds. Elapsed time: 212.68 seconds; current allocated memory: 480.716 MB.
+INFO: [HLS 200-112] Total CPU user time: 339.77 seconds. Total CPU system time: 9.78 seconds. Total elapsed time: 293.17 seconds; peak allocated memory: 469.049 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Tue Jan  5 17:19:12 2021...
