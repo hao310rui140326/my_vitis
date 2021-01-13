@@ -1,0 +1,89 @@
+
+****** Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2019.1 (64-bit)
+  **** SW Build 2552052 on Fri May 24 14:47:09 MDT 2019
+  **** IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+    ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+source /tools/Xilinx/Vivado/2019.1/scripts/vivado_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running '/tools/Xilinx/Vivado/2019.1/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'hao' on host 'hao-Lenovo-Rescuer-15ISK' (Linux_x86_64 version 5.4.0-58-generic) on Tue Jan 05 15:08:20 CST 2021
+INFO: [HLS 200-10] On os Ubuntu 20.04.1 LTS
+INFO: [HLS 200-10] In directory '/home/hao/wrk/my_vitis/my_insar/prj02'
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-10] Creating and opening project '/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj'.
+INFO: [HLS 200-10] Adding design file 'src/fft_top.cpp' to the project
+INFO: [HLS 200-10] Adding test bench file 'src/main_2d_fft_test.cpp' to the project
+INFO: [HLS 200-10] Creating and opening solution '/home/hao/wrk/my_vitis/my_insar/prj02/prj_insar.prj/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-10] Setting target device to 'xcu200-fsgd2104-2-e'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33ns.
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../src/main_2d_fft_test.cpp in debug mode
+   Compiling ../../../../src/fft_top.cpp in debug mode
+   Generating csim.exe
+In file included from /tools/Xilinx/Vivado/2019.1/include/hls_fft_x_complex.h:68:0,
+                 from /tools/Xilinx/Vivado/2019.1/include/hls_fft.h:912,
+                 from ../../../../src/fft_top.h:98,
+                 from ../../../../src/main_2d_fft_test.cpp:27:
+/tools/Xilinx/Vivado/2019.1/include/hls_x_complex.h:43:185: 附注： #pragma message: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.
+ #pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+                                                                                                                                                                                         ^
+In file included from /tools/Xilinx/Vivado/2019.1/include/hls_fft_x_complex.h:68:0,
+                 from /tools/Xilinx/Vivado/2019.1/include/hls_fft.h:912,
+                 from ../../../../src/fft_top.h:98,
+                 from ../../../../src/fft_top.cpp:93:
+/tools/Xilinx/Vivado/2019.1/include/hls_x_complex.h:43:185: 附注： #pragma message: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.
+ #pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+                                                                                                                                                                                         ^
+/tools/Xilinx/Vivado/2020.2/tps/lnx64/binutils-2.26/bin/ld: warning: libgmp.so.11, needed by /tools/Xilinx/Vivado/2019.1/lnx64/tools/fft_v9_1/libIp_xfft_v9_1_bitacc_cmodel.so, may conflict with libgmp.so.7
+---------------------FFT 2D start 
+======OUTPUT : row is  -7 col is 7
+================================================================
+---------------------Impulse test Passed Successfully.
+================================================================
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'src/fft_top.cpp' ... 
+WARNING: [HLS 200-40] In file included from src/fft_top.cpp:93:
+In file included from src/fft_top.h:98:
+In file included from /tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_fft.h:912:
+In file included from /tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_fft_x_complex.h:68:
+/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 200-40] In file included from src/fft_top.cpp:1:
+In file included from src/fft_top.cpp:93:
+In file included from src/fft_top.h:98:
+In file included from /tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_fft.h:913:
+In file included from /tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_fft_x_complex.h:68:
+/tools/Xilinx/Vivado/2019.1/common/technology/autopilot/hls_x_complex.h:43:9: warning: hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature. [-W#pragma-messages]
+#pragma message("hls::x_complex library will be replaced in 2019.2 with a new implementation that does not provide automatic bit width expansion. Please avoid relying on this feature.")
+        ^
+1 warning generated.
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:182:20
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:280:20
+WARNING: [HLS 214-111] Static scalars and arrays declared inside a dataflow region will be treated like local variables: src/fft_top.cpp:342:20
+WARNING: [HLS 200-471] Dataflow form checks found 3 issue(s) in file src/fft_top.cpp
+ERROR: [HLS 200-70] pragma 'INTERFACE ap_memory storage_type=ram_1p port=&in' has unknown option 'storage_type'
+ERROR: [HLS 200-70] '#pragma HLS INTERFACE ap_memory storage_type=ram_1p port=&in' is not a valid pragma.
+ERROR: [HLS 200-70] pragma 'INTERFACE ap_memory storage_type=ram_1p port=&in' has unknown option 'storage_type'
+ERROR: [HLS 200-70] '#pragma HLS INTERFACE ap_memory storage_type=ram_1p port=&in' is not a valid pragma.
+ERROR: [HLS 200-70] pragma 'INTERFACE ap_memory storage_type=ram_1p port=&in1' has unknown option 'storage_type'
+ERROR: [HLS 200-70] '#pragma HLS INTERFACE ap_memory storage_type=ram_1p port=&in1' is not a valid pragma.
+ERROR: [HLS 200-70] pragma 'INTERFACE ap_memory storage_type=ram_1p port=&in2' has unknown option 'storage_type'
+ERROR: [HLS 200-70] '#pragma HLS INTERFACE ap_memory storage_type=ram_1p port=&in2' is not a valid pragma.
+ERROR: [HLS 200-70] pragma 'INTERFACE ap_memory storage_type=ram_1p port=&in1' has unknown option 'storage_type'
+ERROR: [HLS 200-70] '#pragma HLS INTERFACE ap_memory storage_type=ram_1p port=&in1' is not a valid pragma.
+ERROR: [HLS 200-70] pragma 'INTERFACE ap_memory storage_type=ram_1p port=&in2' has unknown option 'storage_type'
+ERROR: [HLS 200-70] '#pragma HLS INTERFACE ap_memory storage_type=ram_1p port=&in2' is not a valid pragma.
+Pragma processor failed: 
+    while executing
+"source run_hls.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $arg] "
+
+INFO: [Common 17-206] Exiting vivado_hls at Tue Jan  5 15:09:15 2021...

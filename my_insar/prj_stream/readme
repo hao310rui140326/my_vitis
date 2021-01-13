@@ -1,0 +1,6 @@
+
+ulimit -a
+ulimit -s 65536
+
+
+
